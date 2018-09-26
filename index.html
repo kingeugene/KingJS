@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Table Slider</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/json_table.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <main class="container">
+        <h1 class="card-header">Test table json</h1>
+        <div id="table-block">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name<span class="fa fa-level-up" id="key-up"></span><span class="fa fa-level-down" id="key-down"></span></th>
+                        <th>Value<span class="fa fa-level-up" id="value-up"></span><span class="fa fa-level-down" id="value-down"></span></th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <p class="alert alert-danger" id="error-msg" style="display:none"></p>
+            <form enctype="multipart/form-data">
+                <div class="form-group">
+                    <b>Textarea format: </b><label for="json-holder" class="alert alert-primary" id="hint">[{"name":"<code>your name</code>","value":"<code>your value</code>"},{"name":"<code>your second name</code>","value":"<code>your second value</code>"}]</label>
+                    <textarea class="form-control" id="json-holder" cols="40" rows="5" placeholder="Input Json Data"></textarea>
+                    <button class="btn btn-primary" id="add-json">ADD TO TABLE</button>
+                    <button class="btn btn-primary" id="replace-json">REPLACE TABLE DATA</button>
+                    <button class="btn btn-primary" id="load-json">LOAD TO TEXT AREA</button>
+                    <button class="btn btn-success" id="file-export">EXPORT FILE</button>
+                    <label class="radio-inline"><input type="radio" name="file-format" id="json-file" value="json" checked="checked">JSON</label>
+                    <label class="radio-inline"><input type="radio" name="file-format" id="csv-file" value="csv">CSV</label>
+                    <div class="input-group col-md-6">
+                        <div class="custom-file">
+                            <input class="custom-file-input" type="file" id="file-load" accept="application/json, .csv">
+                            <label class="custom-file-label" for="file-load">LOAD JSON/CSV</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
